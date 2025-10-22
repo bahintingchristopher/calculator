@@ -1,11 +1,10 @@
 {
   "name": "Calculator with Time & Date",
   "short_name": "CalcTime",
-  "start_url": ".",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#f5f5f5",
   "theme_color": "#4285F4",
-  "orientation": "portrait",
   "icons": [
     {
       "src": "icon-192.png",
