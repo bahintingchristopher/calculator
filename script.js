@@ -125,4 +125,35 @@ if ('serviceWorker' in navigator) {
       .then(reg => console.log('Service Worker registered', reg))
       .catch(err => console.error('Service Worker failed:', err));
   });
+
+  let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome from showing the default prompt
+  e.preventDefault();
+
+  // Save the event for later use
+  deferredPrompt = e;
+
+  // Show  custom install button or prompt UI here
+  const installBtn = document.getElementById('install-button');
+  if (installBtn) installBtn.style.display = 'block';
+
+  installBtn.addEventListener('click', () => {
+    // Show the install prompt
+    deferredPrompt.prompt();
+
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the install prompt');
+      } else {
+        console.log('User dismissed the install prompt');
+      }
+      deferredPrompt = null;
+      installBtn.style.display = 'none';
+    });
+  });
+});
+
 }

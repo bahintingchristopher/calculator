@@ -21,7 +21,7 @@ html, body {
 }
 
 .border {
-    border: 5px solid black;
+    border: 2px solid black;
     background-color: aqua;
     margin-top: 25px;
     padding-left: 10px;
