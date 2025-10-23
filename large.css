@@ -47,8 +47,7 @@ main {
     height: 70px; 
     font-weight: bold;
     color: black;
-    padding-top: -20px;
-}
+   }
 
 
 .design h1 {
@@ -67,9 +66,7 @@ main {
 .modern h3 {
     font-size: 1.8rem;
     margin-bottom: 20px;
-    text-decoration:lab(from color l a b);
-
-}
+  }
 
 
 /* Date and time display */
